@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant M as Main
+    participant DH as DiffieHellman
+    participant SS as SecureStorage
+    M->>DH: generate_keys()
+    DH->>M: return public_key
+    M->>SS: store_key(public_key, key_id)
+    SS->>M: return success
+    M->>SS: retrieve_key(key_id)
+    SS->>M: return public_key
+    M->>DH: compute_shared_secret(other_public_key)
+    DH->>M: return shared_secret

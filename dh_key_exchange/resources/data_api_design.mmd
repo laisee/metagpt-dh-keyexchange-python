@@ -1,0 +1,24 @@
+classDiagram
+    class DiffieHellman{
+        +int private_key
+        +int public_key
+        +generate_keys()
+        +compute_shared_secret(other_public_key: int): int
+    }
+    class SecureStorage{
+        +store_key(key: int, key_id: str)
+        +retrieve_key(key_id: str): int
+    }
+    class AzureKeyVault extends SecureStorage{
+        +store_key(key: int, key_id: str)
+        +retrieve_key(key_id: str): int
+    }
+    class AWSSecrets extends SecureStorage{
+        +store_key(key: int, key_id: str)
+        +retrieve_key(key_id: str): int
+    }
+    class KeeperSecurity extends SecureStorage{
+        +store_key(key: int, key_id: str)
+        +retrieve_key(key_id: str): int
+    }
+    DiffieHellman "1" -- "1" SecureStorage: uses
