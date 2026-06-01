@@ -2,5 +2,5 @@ pycryptodome==3.19.1
 azure.identity==1.16.1
 boto3==1.18.33
 keepercommander==4.60
-pytest==6.2.5
+pytest==9.0.3
 unittest2==1.1.0
